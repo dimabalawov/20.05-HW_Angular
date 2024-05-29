@@ -1,0 +1,39 @@
+<form [formGroup]="myForm" novalidate (ngSubmit)="setFormSubmitted()">
+  <div>
+    <label>E-mail</label><br>
+    <input name="email" formControlName="userEmail" />
+    <div *ngIf="myForm.controls['userEmail'].invalid && myForm.controls['userEmail'].touched" class="alert">Не указан email</div>
+  </div>
+  <div>
+    <label>Пароль</label><br>
+    <input type="password" name="password" formControlName="userPassword" />
+    <div *ngIf="myForm.controls['userPassword'].invalid && myForm.controls['userPassword'].touched" class="alert">Некорректный пароль</div>
+  </div>
+  <div>
+    <label>
+      <input type="checkbox" formControlName="agree"> Я согласен с правилами и условиями    </label>
+    <div *ngIf="submitted && myForm.controls['agree'].invalid && myForm.controls['agree'].value === false" class="alert">Вы должны согласиться с правилами и условиями</div>
+  </div>
+  
+  <div>
+    <label for="hobbies">Ваши увлечения:</label>
+
+    <div formArrayName="hobbies">
+      <div *ngFor="let hobbyControl of hobbies.controls; let i = index">
+        <div [formGroupName]="i">
+          <input type="text" formControlName="name" />
+        </div>
+      </div>
+      <button type="button" (click)="addHobby()">Добавить увлечение</button>
+    </div>
+    
+  </div>
+  <div>
+    <button [disabled]="myForm.invalid">Отправить</button>
+  </div>
+</form>
+
+<div *ngIf="myForm.valid && submitted ">
+  <div>Форма отправлена со следующими данными:</div>
+  <div>{{ myForm.value | json }}</div>
+</div>

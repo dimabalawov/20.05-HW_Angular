@@ -1,0 +1,95 @@
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+
+  label input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+
+  button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  button:not([disabled]):hover {
+    background-color: #0056b3;
+  }
+  
+
+  .alert {
+    color: #d9534f;
+    font-size: 0.875em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  
+
+  div[formArrayName="hobbies"] {
+    margin-bottom: 20px;
+  }
+  
+  div[formArrayName="hobbies"] > div {
+    margin-bottom: 10px;
+  }
+  
+  div[formArrayName="hobbies"] > div > div {
+    display: flex;
+    align-items: center;
+  }
+  
+  div[formArrayName="hobbies"] > div > div input[type="text"] {
+    flex: 1;
+  }
+  
+
+  form + div {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #d4edda;
+    border-radius: 5px;
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  form + div > div {
+    margin-bottom: 5px;
+  }
+  
